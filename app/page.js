@@ -1,5 +1,18 @@
+import Navbar from "@/components/Navbar";
+import Home from "@/components/Home";
+import ToggleTheme from "@/components/ToggleTheme";
 import Image from "next/image";
 
-export default function Home() {
-  return <h1>Fatih kece😹</h1>;
+export default function App() {
+  return (
+    <>
+      <header>
+        <Navbar />
+      </header>
+      <main>
+        <Home />
+        <ToggleTheme />
+      </main>
+    </>
+  );
 }

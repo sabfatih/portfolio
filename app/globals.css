@@ -1,26 +1,123 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+@custom-variant dark (&:where(.dark, .dark *));
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@layer theme {
+  --font-nunito: "Nunito", sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply font-sans bg-gradient-to-br from-white to-zinc-100 dark:from-black dark:to-zinc-900 bg-no-repeat min-h-screen text-black dark:text-white;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  /* Background Utama */
+  .bg_default {
+    @apply bg-[#FAFDF6];
+  }
+  .bg_default_dark {
+    @apply bg-[#1A1A1A];
+  }
+
+  /* 🖋️ Teks Default */
+  .text_default {
+    @apply text-[#1A1A1A];
+  }
+  .text_default_dark {
+    @apply text-[#FAFDF6];
+  }
+
+  /* ✅ Primary Text & Background */
+  .text_primary {
+    @apply text-[#3F6212];
+  }
+  .text_primary_dark {
+    @apply text-[#A3E635];
+  }
+  .bg_primary {
+    @apply bg-[#3F6212];
+  }
+  .bg_primary_dark {
+    @apply bg-[#A3E635];
+  }
+
+  /* ✨ Accent Text & Background */
+  .text_accent {
+    @apply text-[#A3E635];
+  }
+  .text_accent_dark {
+    @apply text-[#3F6212];
+  }
+  .bg_accent {
+    @apply bg-[#A3E635];
+  }
+  .bg_accent_dark {
+    @apply bg-[#3F6212];
+  }
+
+  /* 🧩 Card / Box */
+  .bg_card {
+    @apply bg-white;
+  }
+  .bg_card_dark {
+    @apply bg-[#111111];
+  }
+
+  /* 📏 Border */
+  .border_style {
+    @apply border-[#D4D4D4];
+  }
+  .border_style_dark {
+    @apply border-[#333333];
+  }
+
+  /* 🌿 Outline Primary */
+  .outline_primary {
+    @apply outline-[#3F6212];
+  }
+  .outline_primary_dark {
+    @apply outline-[#A3E635];
+  }
+
+  /* ✨ Outline Accent */
+  .outline_accent {
+    @apply outline-[#A3E635];
+  }
+  .outline_accent_dark {
+    @apply outline-[#3F6212];
+  }
+
+  /* ✅ Ring Primary */
+  .ring_primary {
+    @apply ring-[#3F6212];
+  }
+  .ring_primary_dark {
+    @apply ring-[#A3E635];
+  }
+
+  /* ✨ Ring Accent */
+  .ring_accent {
+    @apply ring-[#A3E635];
+  }
+  .ring_accent_dark {
+    @apply ring-[#3F6212];
+  }
+
+  /* 🔗 Link Style */
+  .link_style {
+    @apply text-[#3F6212] hover:text-[#65A30D];
+  }
+  .link_style_dark {
+    @apply text-[#A3E635] hover:text-[#BFFB49];
+  }
+}
+
+.nav_item {
+  @apply m-auto text-lg cursor-pointer hover:opacity-80;
+}
+
+.on_this_section {
+  @apply text-[#3F6212] dark:text-[#A3E635] border-b-2 border-[#3F6212] dark:border-[#A3E635] transition-all;
 }
