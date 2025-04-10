@@ -9,11 +9,11 @@ const Navbar = () => {
   const navigations = ["Home", "About", "Skills", "Projects", "Contact"];
 
   return (
-    <nav className="fixed top-0 inset-x-0 mx-auto py-3 px-4 bg-transparent backdrop-blur-md flex justify-between place-items-center">
-      <h3 className="font-semibold text-2xl text-cyan-500 basis-1/2">
-        Sabihisma Fatih
+    <nav className="sticky top-0 inset-x-0 mx-auto py-3 px-4 bg-transparent backdrop-blur-md flex justify-between place-items-center">
+      <h3 className="font-semibold text-2xl w-fit text-[#3F6212] dark:text-[#A3E635] md:basis-1/2 xl:basis-2/3">
+        Personal Page
       </h3>
-      <div className="hidden md:flex md:gap-2 md:basis-1/2 ">
+      <div className="hidden md:flex md:gap-2 md:basis-1/2 xl:basis-1/3">
         {navigations.map((item) => {
           return <NavItem name={item} key={item} />;
         })}
@@ -45,7 +45,7 @@ function NavItem({ name }) {
   return (
     <p
       onClick={navItemHandler}
-      className={`nav_item ${onThisSection ? "on_this_section" : "asuu"}`}
+      className={`nav_item ${onThisSection ? "on_this_section" : ""}`}
     >
       {name}
     </p>
@@ -59,12 +59,12 @@ const Dropdown = ({ navigations }) => {
     <div className="relative md:hidden">
       <button
         onClick={() => setDropdown((prev) => !prev)}
-        className={`${dropdown ? "rotate-180" : ""} transition-all`}
+        className={`${dropdown ? "-rotate-90" : ""} transition-all`}
       >
         <TbBaselineDensitySmall size={"2em"} />
       </button>
       {dropdown && (
-        <div className="flex flex-col gap-2.5 absolute right-0 rounded-sm bg-zinc-400  dark:bg-zinc-800 py-2.5 px-7">
+        <div className="flex flex-col gap-2.5 absolute right-0 rounded-sm bg-[#FAFDF6] dark:bg-[#1a1a1a] outline-1 outline-[#3f6212] dark:outline-[#a3e635] py-2.5 px-7">
           {navigations.map((item) => {
             return <NavItem name={item} key={item} />;
           })}

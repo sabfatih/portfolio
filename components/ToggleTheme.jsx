@@ -24,7 +24,7 @@ const ToggleTheme = () => {
   return (
     <button
       onClick={themeHandler}
-      className="fixed bottom-4 right-4 size-12 p-2 rounded-full bg-zinc-300 dark:bg-zinc-700 cursor-pointer hover:scale-105 active:scale-90 transition-all"
+      className="fixed bottom-4 right-4 size-12 p-2 rounded-full bg-[#FAFDF6] dark:bg-[#1A1A1A] cursor-pointer hover:scale-105 active:scale-90 transition-all"
     >
       {theme == "light" ? (
         <TbMoon size={"1.5em"} className="m-auto" />
