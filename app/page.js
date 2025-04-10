@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import ToggleTheme from "@/components/ToggleTheme";
 import Image from "next/image";
 
 export default function Home() {
@@ -6,9 +7,10 @@ export default function Home() {
     <>
       <header>
         <Navbar />
-        <div className="size-8 bg-sky-200 m-auto my-14"></div>
       </header>
-      <main></main>
+      <main>
+        <ToggleTheme />
+      </main>
     </>
   );
 }
